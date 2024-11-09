@@ -104,6 +104,7 @@ class Dashboard:
 
         if self._config.enable_inky:
             self._inky_display.set_image(image)
+            self._inky_display.show()
         else:
             image.show()
 
