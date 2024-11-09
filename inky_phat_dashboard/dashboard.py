@@ -4,6 +4,7 @@ import asyncio
 import logging
 from typing import Callable
 
+from inky import auto
 from PIL import Image
 
 from inky_phat_dashboard.const import RESTART_DELAY_SECONDS
@@ -32,6 +33,7 @@ class Dashboard:
         self._data_collection_task: asyncio.Task | None = None
         self._display_refresh_task: asyncio.Task | None = None
         self._last_view_data: ViewData | None = None
+        self._inky_display = auto() if config.enable_inky else None
 
     async def start(self):
         """Start the Inky pHat Dashboard."""
@@ -101,7 +103,7 @@ class Dashboard:
                 )
 
         if self._config.enable_inky:
-            raise NotImplementedError("Inky display is not yet implemented")
+            self._inky_display.set_image(image)
         else:
             image.show()
 
