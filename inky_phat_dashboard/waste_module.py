@@ -76,7 +76,7 @@ class WasteModule(BaseModule):
             elements=[
                 DashboardElementData(
                     icon_path=sensor_config.icon_path_small,
-                    text=self._text_from_remaining_days(
+                    text=self._text_from_remaining_days_short(
                         state_information.remaining_days
                     )
                     if state_information.is_available
@@ -119,6 +119,17 @@ class WasteModule(BaseModule):
             view_datas.append(detailed_view_data)
 
         return view_datas
+
+    def _text_from_remaining_days_short(self, remaining_days: int) -> str:
+        """Get the text from the remaining days."""
+
+        if remaining_days == 0:
+            return "Heute"
+
+        if remaining_days == 1:
+            return "Morgen"
+
+        return f"{remaining_days}"
 
     def _text_from_remaining_days(self, remaining_days: int) -> str:
         """Get the text from the remaining days."""
