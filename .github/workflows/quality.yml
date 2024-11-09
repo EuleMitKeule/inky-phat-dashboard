@@ -90,7 +90,7 @@ jobs:
 
       - name: Run ruff
         run: |
-          poetry run ruff inky_phat_dashboard
+          poetry run ruff check inky_phat_dashboard
 
   mypy:
     needs: cache
