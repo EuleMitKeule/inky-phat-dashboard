@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "inky-phat-dashboard"
+version = "0.0.0"
+description = "Dashboard framework for Inky pHat e-ink displays."
+authors = ["Lennard Beers <l.beers@outlook.de>"]
+readme = "README.md"
+license = "MIT"
+packages = [
+    { include = "inky_phat_dashboard", from = "." }
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+aiohttp = "^3.10.10"
+python-dotenv = "^1.0.1"
+pyyaml = "^6.0.2"
+marshmallow-dataclass = "^8.7.1"
+tzlocal = "^5.2"
+pillow = "^11.0.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

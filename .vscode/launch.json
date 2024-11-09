@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "inky-phat-dashboard",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "inky_phat_dashboard",
+            "justMyCode": true
+        }
+    ]
+}
