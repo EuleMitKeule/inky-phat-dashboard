@@ -1,4 +1,4 @@
-FROM python:3.12-buster as builder
+FROM python:3.12-bookworm as builder
 
 RUN pip install poetry==1.8.3
 
@@ -14,7 +14,19 @@ RUN touch README.md
 
 RUN poetry install --without dev --without test --no-root && rm -rf ${POETRY_CACHE_DIR}
 
-FROM python:3.12-slim-buster as runtime
+FROM python:3.12-slim-bookworm as runtime
+
+RUN apt-get update && apt-get upgrade -y \
+    && apt-get install -y \
+    raspi-gpio \
+    python3.12-rpi.gpio \
+    python3.12-spidev \
+    python3.12-smbus \
+    python3.12-numpy \
+    python3.12-pil \
+    python3.12-lxml \
+    python3.12-smbus \
+    && apt-get autoclean -y && apt-get autoremove -y && apt-get clean && apt-get remove && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
