@@ -1,4 +1,4 @@
-FROM python:3.12-bookworm as builder
+FROM python:3.11-bookworm as builder
 
 RUN pip install poetry==1.8.3
 
@@ -14,7 +14,7 @@ RUN touch README.md
 
 RUN poetry install --without dev --without test --no-root && rm -rf ${POETRY_CACHE_DIR}
 
-FROM python:3.12-slim-bookworm as runtime
+FROM python:3.11-slim-bookworm as runtime
 
 WORKDIR /app
 
