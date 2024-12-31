@@ -13,6 +13,7 @@ from inky_phat_dashboard.const import (
     DEFAULT_COLOR_MODE,
     DEFAULT_DATA_TIMEOUT_SECONDS,
     DEFAULT_ENABLE_INKY,
+    DEFAULT_FLIP_SCREEN,
     DEFAULT_FONT_PATH,
     DEFAULT_LOG_DATEFMT,
     DEFAULT_LOG_FILEMODE,
@@ -147,6 +148,7 @@ class Config:
     waste_detailed_days: int = DEFAULT_WASTE_DETAILED_DAYS
     waste_alert_days: int = DEFAULT_WASTE_ALERT_DAYS
     enable_inky: bool = DEFAULT_ENABLE_INKY
+    flip_screen: bool = DEFAULT_FLIP_SCREEN
 
     config_file_path: Path = field(init=False, repr=False, compare=False)
 

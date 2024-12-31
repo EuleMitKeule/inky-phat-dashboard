@@ -106,6 +106,10 @@ class ImageGenerator:
         )
 
         result = result.convert("P", palette=self._palette, colors=256)
+
+        if self._config.flip_screen:
+            result = result.rotate(180)
+
         return result
 
     def generate_detailed_view_two_lines(
@@ -157,6 +161,10 @@ class ImageGenerator:
         )
 
         result = result.convert("P", palette=self._palette, colors=256)
+
+        if self._config.flip_screen:
+            result = result.rotate(180)
+
         return result
 
     def generate_dashboard_view(
@@ -218,4 +226,8 @@ class ImageGenerator:
             )
 
         result = result.convert("P", palette=self._palette, colors=256)
+
+        if self._config.flip_screen:
+            result = result.rotate(180)
+
         return result
