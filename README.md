@@ -38,6 +38,7 @@ view_change_interval_seconds: 60
 ## Development
 
 This package can only be installed and run on a Linux OS or WSL.
+When developing on a device that does not have an inky display attached, `enable_inky` has to be set to `False` in the `config.yml`.
 
 1. Install [`poetry`](https://python-poetry.org/) (This will later be changed to [`uv`](https://docs.astral.sh/uv/))
 2. Install dependencies with `poetry install`
@@ -46,3 +47,4 @@ This package can only be installed and run on a Linux OS or WSL.
 
 To implement new layouts, `image_generator.py` can be extended with new image generation methods and `models.py` with new `ViewData` subclasses.
 New modules can be implemented by subclassing `BaseModule` from `base_module.py` and implementing the abstract methods.
+New configuration options are introduced by defining them in the `Config` class from `models.py`.
