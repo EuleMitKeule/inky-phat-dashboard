@@ -27,12 +27,15 @@ home_assistant:
 logging:
   level: INFO
 color_palette: RED  # RED or YELLOW depending on your inky display
+color_mode: LIGHT  # LIGHT or DARK color theme, inverts the background and foreground colors
 waste_detailed_days: 1  # Detailed screens for waste types are shown when they are due tomorrow
 waste_alert_days: 2  # Waste types are displayed in red color when they are due in two days
 enable_inky: True  # An inky display is attached to this device
 flip_screen: True  # Flip = True means up is where the USB ports on the Pi Zero are
 data_timeout_seconds: 20  # Timeout between data polling from Home Assistant
 view_change_interval_seconds: 60  # Timeout between screen changes
+timezone: Europe/Berlin  # Optional timezone overwrite (Default is the system's timezone)
+font_path: fonts/MinecraftRegular.otf  # Optional font overwrite
 ```
 
 ## Development
